@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beauty</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
 
     <style>
         body {
             padding: 0;
             margin: 0;
+            font-family: 'Open Sans', sans-serif;
         }
 
         #videoElement {
@@ -45,6 +48,12 @@
             height: 99vh;
             background-color: #000;
         }
+        button {
+            padding: 10px;
+            background-color: black;
+            color: white;
+            border: 2px solid white;
+        }
     </style>
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>
     </link>
@@ -71,7 +80,14 @@
 
     </div>
 
-    <div class="mirror"></div>
+    <div class="mirror">
+        <button onclick="clk()">NEXT</button>
+    </div>
+    <script>
+        function clk() {
+            window.location.href = 'aboutyou.html'
+        }
+    </script>
     <!-- <script>
         var video = document.querySelector("#videoElement");
 
@@ -92,8 +108,11 @@
           function play() {
           }
         </script>  -->
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
     <script>
+        $('button').hide()
+        swal("Get ready to see her! Click on screen to open the door")
         var doorOpen = false;
         $('#container').hide();
         $(".mirror").hide();
@@ -110,6 +129,11 @@
                         $(".mirror").show();
                         setTimeout(function() {
                             swal("This black color background is my eye pupil, and zara gaur se dheko ki kiska reflection aa raha hai isme? ")
+                            setTimeout(
+                                function() {
+                                    $('button').show()
+                                }
+                           , 2000 )
                         }, 10000)
                     }, 15000)
                 }
