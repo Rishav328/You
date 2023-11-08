@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty</title>
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        #videoElement {
+            width: 100%;
+            height: 100vh;
+            display: block;
+            background-color: #666;
+        }
+
+        .flex-container {
+            display: flex;
+        }
+
+        .flex-child {
+            flex: 1;
+            height: 99vh;
+            border: 2px solid rgb(51, 0, 0);
+            /* background-color: rgb(238, 192, 66); */
+            background: linear-gradient(#c2730b, #db4646, #b60707, #3f1010);
+        }
+
+        #knoct {
+            width: 50px;
+            height: 50px;
+            background-color: rgb(70, 8, 8);
+            border: 2px solid black;
+            border-radius: 100%;
+            margin-top: 50vh;
+        }
+
+        .mirror {
+            width: 100%;
+            height: 99vh;
+            background-color: #000;
+        }
+    </style>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>
+    </link>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- <div id="container">
+        <video autoplay="true" id="videoElement">
+
+        </video>
+    </div> -->
+    <div class="flex-container">
+
+        <div class="flex-child magenta" align="center">
+            <div id="knoct">
+
+            </div>
+        </div>
+
+        <div class="flex-child green">
+
+        </div>
+
+    </div>
+
+    <div class="mirror"></div>
+    <!-- <script>
+        var video = document.querySelector("#videoElement");
+
+        if (navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(function (stream) {
+                    video.srcObject = stream;
+                })
+                .catch(function (err0r) {
+                    console.log("Something went wrong!");
+                });
+        }
+    </script> -->
+    <audio controls style=" display:none;" loop   id="music"  >
+        <source  src="yourfeeling.mp3">
+        <!-- <script>
+          window.addEventListener("click",play);
+          function play() {
+          }
+        </script>  -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
+    <script>
+        var doorOpen = false;
+        $('#container').hide();
+        $(".mirror").hide();
+        $(".flex-container").on('click', function () {
+            $(".flex-container").hide();
+            doorOpen = true;
+            setTimeout(function () {
+                 document.getElementById("music").play();
+                swal("It's blank, right? It's because you're thinking from your sight	&#128547;");
+                setTimeout(function () {
+                    swal("Now, close your eyes for 5seconds, and think ki kon ho sakta hai jo mujhe lagta hai ki meri parwah karta hai and mein bahut comfortable feel karta hoon uske saath hone ka esaas se hi! Close your eyes for 10 sec, and then you can see that's girl face, from My eyes(litrally), Press 'OK'")
+
+                    setTimeout(function () {
+                        $(".mirror").show();
+                        setTimeout(function() {
+                            swal("This black color background is my eye pupil, and zara gaur se dheko ki kiska reflection aa raha hai isme? ")
+                        }, 10000)
+                    }, 15000)
+                }
+
+                    , 4500);
+            }, 2500);
+        });
+
+
+    </script>
+</body>
+
+</html>
